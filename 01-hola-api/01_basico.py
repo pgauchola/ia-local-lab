@@ -1,6 +1,12 @@
 """01 - Basic call: send one message to a local model and inspect the response."""
 
+import sys
+
 from openai import OpenAI
+
+# Windows may print with the old cp1252 encoding, which crashes on characters
+# like "‑" or emojis that models often produce. Force UTF-8.
+sys.stdout.reconfigure(encoding="utf-8")
 
 # LM Studio exposes an OpenAI-compatible API, so we only change the address.
 # The API key is required by the library but LM Studio ignores it.
