@@ -25,7 +25,7 @@ Models used:
 
 | # | Project | What it teaches | Status |
 |---|---|---|---|
-| 01 | **Hello API**: talk to LM Studio with the `openai` library, normal and streaming responses, tok/s, comparing models | Messages and roles, parameters, tokens, context, streaming | In progress |
+| 01 | [**Hello API**](01-hola-api/): talk to LM Studio with the `openai` library, normal and streaming responses, tok/s, comparing models | Messages and roles, parameters, tokens, context, streaming | ✅ Done |
 | 02 | **Batch processing**: a folder of texts → structured JSON per text | Structured output (JSON schema), validation | Planned |
 | 03 | **Tool calling by hand**: the model calls Python functions, with a hand-written agent loop | How an agent works inside | Planned |
 | 04 | **MCP in LM Studio**: add an MCP server and use it from the chat | The MCP standard, permissions, prompt injection risks | Planned |
@@ -34,7 +34,8 @@ Models used:
 ## Running a project
 
 1. Open LM Studio and turn the local server on (**Running**).
-2. In the project folder:
+2. Load the model with full GPU offload, e.g. `lms load openai/gpt-oss-20b --gpu max -y` (auto-loading through the API may leave layers on the CPU, see [01](01-hola-api/#lessons-learned)).
+3. In the project folder:
    ```powershell
    uv sync          # creates .venv and installs the exact versions from uv.lock
    uv run <script>.py
