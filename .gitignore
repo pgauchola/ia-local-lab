@@ -1,0 +1,20 @@
+# Python virtual environments (recreated with `uv sync`)
+.venv/
+
+# Python bytecode cache
+__pycache__/
+*.pyc
+
+# Secrets and local config: never commit
+.env
+.env.*
+
+# Model weights: far too big for git, they live in C:\IA\modelos
+*.gguf
+*.safetensors
+*.bin
+
+# Editor / OS clutter
+.vscode/
+.ipynb_checkpoints/
+Thumbs.db
